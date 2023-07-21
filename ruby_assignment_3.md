@@ -2,7 +2,11 @@
 
 In Ruby, blocks can be either implicit or explicit.
 
-Implicit blocks are anonymous blocks that are passed to a method as a parameter. They are denoted by a dot . followed by a block of code. For example:
+Implicit blocks are anonymous blocks that are passed to a method as a parameter. They are denoted by a dot . followed by a block of code.
+
+Implicit blocks are not accessible outside of the method that they are passed to.
+
+For example:
 
 ```
 def my_method(&block)
@@ -13,20 +17,6 @@ my_method do
   puts "This is an implicit block"
 end
 ```
-
-Explicit blocks are named blocks that are declared using the & symbol. They can be stored in variables or passed to methods as parameters. For example:
-
-```
-def my_method(&block)
-  block.call
-end
-
-block = Proc.new { puts "This is an explicit block" }
-
-my_method(&block)
-```
-
-The main difference between implicit and explicit blocks is that implicit blocks are not accessible outside of the method that they are passed to. Explicit blocks, on the other hand, can be stored in variables and passed to other methods.
 
 ### 2.Write a code where a proc is passed as an argument to the method.
 
